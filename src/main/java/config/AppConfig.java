@@ -1,8 +1,11 @@
 package config;
 
 import model.InjectRandomIntAnnotationBeanPostProcessor;
+import model.PostProxyInvokerContextListener;
 import model.ProfilingHandlerBeanPostProcessor;
 import model.TerminatorQuoter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -26,5 +29,10 @@ public class AppConfig {
     @Bean
     public ProfilingHandlerBeanPostProcessor createProfilingHandlerBeanPostProcessor() throws Exception {
         return new ProfilingHandlerBeanPostProcessor();
+    }
+
+    @Bean
+    public PostProxyInvokerContextListener createPostProxyInvokerContextListener() {
+        return new PostProxyInvokerContextListener();
     }
 }

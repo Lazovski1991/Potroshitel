@@ -3,14 +3,10 @@ import model.Quoter;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         AnnotationConfigApplicationContext annotationConfigApplicationContext =
                 new AnnotationConfigApplicationContext(AppConfig.class);
+        annotationConfigApplicationContext.getBean(Quoter.class).sayQuoter();
 
-        Quoter bean = annotationConfigApplicationContext.getBean(Quoter.class);
-        while (true) {
-            Thread.sleep(150);
-            bean.sayQuoter();
-        }
     }
 }

@@ -25,7 +25,9 @@ public class TerminatorQuoter implements Quoter {
     }
 
     @Override
+    @PostProxy
     public void sayQuoter() {
+        System.out.println("Phase_3");
         for (int i = 0; i < random; i++) {
             System.out.println(message);
         }

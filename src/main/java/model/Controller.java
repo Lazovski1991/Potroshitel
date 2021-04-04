@@ -1,7 +1,7 @@
 package model;
 
 public class Controller implements ControllerMBean {
-    private boolean enable;
+    private boolean enable = true;
 
     public boolean isEnable() {
         return enable;

@@ -17,7 +17,6 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
     private Map<String, Class> map = new HashMap<>();
     private Controller controller = new Controller();
 
-
     public ProfilingHandlerBeanPostProcessor() throws Exception {
         MBeanServer platformMBeanServer = ManagementFactory.getPlatformMBeanServer();
         platformMBeanServer.registerMBean(controller, new ObjectName("profiling", "name", "controller"));
